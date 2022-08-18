@@ -15,7 +15,6 @@ export default class Form extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    console.log('this.state', this.state);
     this.props.formSubmitData(this.state);
     this.resetForm();
   };

@@ -1,7 +1,6 @@
 import { Form, Contacts, Filter } from 'components';
 import React, { Component } from 'react';
 import shortid from 'shortid';
-// import PropTypes from 'prop-types';
 
 export class App extends Component {
   state = {
@@ -43,6 +42,21 @@ export class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== todoId),
     }));
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    const { contacts } = this.state;
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem('Contacts', JSON.stringify(contacts));
+    }
+  }
+
+  componentDidMount() {
+    const contactsLocalStorage = localStorage.getItem('Contacts');
+    const parsed = JSON.parse(contactsLocalStorage);
+    if (parsed) {
+      this.setState({ contacts: parsed });
+    }
+  }
 
   render() {
     const { contacts, filter } = this.state;
