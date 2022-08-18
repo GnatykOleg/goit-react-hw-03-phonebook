@@ -13,36 +13,6 @@ export class App extends Component {
     filter: '',
   };
 
-  formSubmitData = contact => {
-    const newContactName = contact.name.toLowerCase();
-
-    if (
-      this.state.contacts.some(el => el.name.toLowerCase() === newContactName)
-    ) {
-      alert(`${contact.name} is already in contacts`);
-    } else {
-      const newContact = {
-        id: shortid(),
-        ...contact,
-      };
-
-      this.setState(prevState => ({
-        contacts: [...prevState.contacts, newContact],
-      }));
-    }
-  };
-
-  changeFilter = event => {
-    const { value } = event.currentTarget;
-    this.setState({ filter: value });
-  };
-
-  deleteContact = todoId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== todoId),
-    }));
-  };
-
   componentDidUpdate(prevProps, prevState) {
     const { contacts } = this.state;
     if (prevState.contacts !== contacts) {
@@ -57,6 +27,36 @@ export class App extends Component {
       this.setState({ contacts: parsed });
     }
   }
+
+  formSubmitData = contact => {
+    const newContactName = contact.name.toLowerCase();
+
+    if (
+      this.state.contacts.some(el => el.name.toLowerCase() === newContactName)
+    ) {
+      alert(`${contact.name} is already in contacts`);
+    } else {
+      const newContact = {
+        id: shortid(),
+        ...contact,
+      };
+
+      this.setState(({ contacts }) => ({
+        contacts: [...contacts, newContact],
+      }));
+    }
+  };
+
+  changeFilter = event => {
+    const { value } = event.currentTarget;
+    this.setState({ filter: value });
+  };
+
+  deleteContact = todoId => {
+    this.setState(({ contacts }) => ({
+      contacts: contacts.filter(contact => contact.id !== todoId),
+    }));
+  };
 
   render() {
     const { contacts, filter } = this.state;

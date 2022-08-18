@@ -4,6 +4,7 @@ import s from './Contacts.module.css';
 export default function Contacts({ data, deleteContact }) {
   return (
     <ul className={s.list}>
+      <h3 className={s.listTitle}>Total contacts: {data.length}</h3>
       {data.map(({ id, name, number }) => {
         return (
           <li key={id} className={s.item}>

@@ -17,13 +17,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: scale 250ms linear;
+  cursor: pointer;
 }
 
+.item:hover,
+item:focus {
+  scale: 1.03;
+}
 .text {
   margin-right: 30px;
   font-weight: 500;
 }
 
+.listTitle {
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
 .btn {
   cursor: pointer;
   background-color: black;
@@ -39,5 +51,5 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: rgb(13, 158, 158);
+  background-color: red;
 }
