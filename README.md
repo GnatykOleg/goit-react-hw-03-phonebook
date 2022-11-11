@@ -1,8 +1,6 @@
 # React phonebook start with life cycle
 
-#### 1. I took my previous application as a basis:
-
-[react-phonebook-start](https://github.com/GnatykOleg/react-phonebook-start)
+#### 1. I took my previous application as a basis: [react-phonebook-start](https://github.com/GnatykOleg/react-phonebook-start)
 
 #### 2. And added phone contact storage books in localStorage. Using lifecycle methods.
 
