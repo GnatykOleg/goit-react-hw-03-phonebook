@@ -1,6 +1,11 @@
-<h1>1 - Книга контактов</h1>
-Возьми свое решение задания из предыдущей домашней работы и добавь хранение контактов телефонной книги в localStorage. Используй методы жизненного цикла.
+# React phonebook start with life cycle
 
-При добавлении и удалении контакта, контакты сохраняются в локальное хранилище.
-При загрузке приложения, контакты, если таковые есть, считываются из локального
-хранилища и записываются в состояние.
+#### 1. I took my previous application as a basis:
+
+[react-phonebook-start](https://github.com/GnatykOleg/react-phonebook-start)
+
+#### 2. And added phone contact storage books in localStorage. Using lifecycle methods.
+
+#### 3. When adding and deleting a contact, the contacts are saved to the local storage. When the app is loaded, the contacts, if any, are read from the local storage and are written to the state.
+
+![phonebook](./public/phonebook-start.jpg)
